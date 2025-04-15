@@ -23,7 +23,7 @@ const SearchComponent = () => {
 
   return (
     <div className="p-4 border rounded-xl bg-white shadow">
-      <h3 className="text-lg font-semibold mb-2">🔍 Aloqani qidirish</h3>
+      <h3 className="text-lg font-semibold mb-2"> Find Connections</h3>
       <div className="flex gap-2 mb-2">
         <input
           type="text"
@@ -43,7 +43,7 @@ const SearchComponent = () => {
           onClick={handleSearch}
           className="bg-blue-500 text-white px-4 rounded"
         >
-          Top
+          Search 
         </button>
       </div>
 
