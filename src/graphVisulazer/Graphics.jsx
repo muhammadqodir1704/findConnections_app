@@ -1,7 +1,6 @@
-
 import React from "react";
 import ForceGraph2D from "react-force-graph-2d";
-import { useUsers } from "./UserContext";
+import { useUsers } from "../context/UserContext.jsx";
 
 const Graphics = () => {
   const { users } = useUsers();

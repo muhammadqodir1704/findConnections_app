@@ -1,5 +1,5 @@
 import React from "react";
-import { UserProvider } from "./context/UserContext";
+import { UserProvider } from "./context/UserContext.jsx";
 import Graphics from "./graphVisulazer/Graphics";
 import SearchComponent from "./searchComponent/SearchComponent";
 const App = () => {
