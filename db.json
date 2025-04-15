@@ -1,0 +1,68 @@
+[
+    {
+      "id": 1,
+      "name": "Ali Karimov",
+      "occupation": "Dasturchi",
+      "location": "Toshkent",
+      "connections": [
+        { "target": 2, "type": "hamkasb" },
+        { "target": 3, "type": "kursdosh" },
+        { "target": 4, "type": "instagram" }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Gulnora Rajabova",
+      "occupation": "Dizayner",
+      "location": "Samarqand",
+      "connections": [
+        { "target": 1, "type": "hamkasb" },
+        { "target": 5, "type": "qoshni" },
+        { "target": 3, "type": "sinfdosh" }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Bekzod Salimov",
+      "occupation": "Marketing mutaxassisi",
+      "location": "Namangan",
+      "connections": [
+        { "target": 1, "type": "kursdosh" },
+        { "target": 2, "type": "sinfdosh" },
+        { "target": 6, "type": "bolalikdagi_do‘st" }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Dilshod Xudoyberdiyev",
+      "occupation": "Jurnalist",
+      "location": "Farg‘ona",
+      "connections": [
+        { "target": 1, "type": "instagram" },
+        { "target": 5, "type": "hamkor" }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Malika Sobirova",
+      "occupation": "Huquqshunos",
+      "location": "Andijon",
+      "connections": [
+        { "target": 2, "type": "qoshni" },
+        { "target": 4, "type": "hamkor" },
+        { "target": 6, "type": "tanish" }
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Javlon Qodirov",
+      "occupation": "Fotograf",
+      "location": "Buxoro",
+      "connections": [
+        { "target": 3, "type": "bolalikdagi_do‘st" },
+        { "target": 5, "type": "tanish" },
+        { "target": 1, "type": "konferensiya" }
+      ]
+    }
+  ]
+  
