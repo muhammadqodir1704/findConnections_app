@@ -6,24 +6,24 @@ const SearchComponent = () => {
   const { users } = useUsers();
   const [fromName, setFromName] = useState("");
   const [toName, setToName] = useState("");
-  const [result, setResult] = useState(null);
+  const [results, setResults] = useState(null);
 
   const handleSearch = () => {
     const fromUser = users.find(u => u.name.toLowerCase() === fromName.toLowerCase());
     const toUser = users.find(u => u.name.toLowerCase() === toName.toLowerCase());
 
     if (!fromUser || !toUser) {
-      setResult(null);
+      setResults(null);
       return;
     }
 
-    const path = findConnectionPath(users, fromUser.id, toUser.id);
-    setResult(path);
+    const paths = findConnectionPath(users, fromUser.id, toUser.id);
+    setResults(paths);
   };
 
   return (
     <div className="p-4 border rounded-xl bg-white shadow">
-      <h3 className="text-lg font-semibold mb-2"> Find Connections</h3>
+      <h3 className="text-lg font-semibold mb-2">🔍 Search Connection</h3>
       <div className="flex gap-2 mb-2">
         <input
           type="text"
@@ -39,17 +39,16 @@ const SearchComponent = () => {
           onChange={e => setToName(e.target.value)}
           className="border p-2 rounded w-full"
         />
-        <button
-          onClick={handleSearch}
-          className="bg-blue-500 text-white px-4 rounded"
-        >
-          Search 
-        </button>
+        <button onClick={handleSearch} className="bg-blue-500 text-white px-4 rounded">Top</button>
       </div>
 
-      {result ? (
-        <div className="text-sm text-green-700">
-          Yo‘l: {result.map(id => users.find(u => u.id === id)?.name).join(" → ")}
+      {results ? (
+        <div className="space-y-2">
+          {results.map((path, index) => (
+            <div key={index} className="text-sm text-green-700">
+              Yo'l {index + 1}: {path.map(id => users.find(u => u.id === id)?.name).join(" → ")}
+            </div>
+          ))}
         </div>
       ) : (
         fromName && toName && <div className="text-sm text-red-600">Aloqa topilmadi</div>

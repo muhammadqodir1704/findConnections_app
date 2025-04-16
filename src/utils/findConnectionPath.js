@@ -1,26 +1,29 @@
-// Breadth-First Search to find connection path
-export const findConnectionPath = (users, startId, targetId) => {
-    const queue = [[startId]];
-    const visited = new Set();
+export function findConnectionPath(users, fromId, toId) {
+  const allPaths = [];
+  const visited = new Set();
   
-    while (queue.length > 0) {
-      const path = queue.shift();
-      const current = path[path.length - 1];
-      if (current === targetId) return path;
-  
-      if (!visited.has(current)) {
-        visited.add(current);
-        const user = users.find(u => u.id === current);
-        if (user) {
-          user.connections.forEach(c => {
-            if (!visited.has(c.target)) {
-              queue.push([...path, c.target]);
-            }
-          });
-        }
+  function dfs(currentId, path) {
+    if (currentId === toId) {
+      allPaths.push([...path]);
+      return;
+    }
+
+    const currentUser = users.find(u => u.id === currentId);
+    if (!currentUser || !currentUser.connections) return;
+
+    for (const conn of currentUser.connections) {
+      if (!visited.has(conn.target)) {
+        visited.add(conn.target);
+        path.push(conn.target);
+        dfs(conn.target, path);
+        path.pop();
+        visited.delete(conn.target);
       }
     }
+  }
+
+  visited.add(fromId);
+  dfs(fromId, [fromId]);
   
-    return null; // yo‘l topilmadi
-  };
-  
+  return allPaths.length > 0 ? allPaths : null;
+}
