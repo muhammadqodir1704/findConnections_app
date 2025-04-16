@@ -7,18 +7,26 @@ const SearchComponent = () => {
   const [fromName, setFromName] = useState("");
   const [toName, setToName] = useState("");
   const [results, setResults] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState("");
 
   const handleSearch = () => {
+    setError("");
+    setIsLoading(true);
+    
     const fromUser = users.find(u => u.name.toLowerCase() === fromName.toLowerCase());
     const toUser = users.find(u => u.name.toLowerCase() === toName.toLowerCase());
 
     if (!fromUser || !toUser) {
+      setError("Foydalanuvchi topilmadi");
       setResults(null);
+      setIsLoading(false);
       return;
     }
 
     const paths = findConnectionPath(users, fromUser.id, toUser.id);
     setResults(paths);
+    setIsLoading(false);
   };
 
   return (
@@ -39,10 +47,20 @@ const SearchComponent = () => {
           onChange={e => setToName(e.target.value)}
           className="border p-2 rounded w-full"
         />
-        <button onClick={handleSearch} className="bg-blue-500 text-white px-4 rounded">Top</button>
+        <button 
+          onClick={handleSearch} 
+          className="bg-blue-500 text-white px-4 rounded hover:bg-blue-600 transition-colors"
+          disabled={isLoading}
+        >
+          {isLoading ? "Qidirilmoqda..." : "Search"}
+        </button>
       </div>
 
-      {results ? (
+      {isLoading ? (
+        <div className="text-sm text-blue-600">Qidirilmoqda...</div>
+      ) : error ? (
+        <div className="text-sm text-red-600">{error}</div>
+      ) : results ? (
         <div className="space-y-2">
           {results.map((path, index) => (
             <div key={index} className="text-sm text-green-700">
@@ -50,9 +68,7 @@ const SearchComponent = () => {
             </div>
           ))}
         </div>
-      ) : (
-        fromName && toName && <div className="text-sm text-red-600">Aloqa topilmadi</div>
-      )}
+      ) : null}
     </div>
   );
 };
