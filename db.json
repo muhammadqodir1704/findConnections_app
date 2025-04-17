@@ -1,68 +1,160 @@
-[
+{
+  "users": [
     {
       "id": 1,
-      "name": "Ali Karimov",
+      "name": "Alisher Karimov",
       "occupation": "Dasturchi",
       "location": "Toshkent",
       "connections": [
         { "target": 2, "type": "hamkasb" },
         { "target": 3, "type": "kursdosh" },
-        { "target": 4, "type": "instagram" }
+        { "target": 4, "type": "instagram" },
+        { "target": 5, "type": "qoshni" },
+        { "target": 6, "type": "harbiy_xizmatdosh" }
       ]
     },
     {
       "id": 2,
-      "name": "Gulnora Rajabova",
+      "name": "Gulnoza Murodova",
       "occupation": "Dizayner",
       "location": "Samarqand",
       "connections": [
         { "target": 1, "type": "hamkasb" },
         { "target": 5, "type": "qoshni" },
-        { "target": 3, "type": "sinfdosh" }
+        { "target": 3, "type": "sinfdosh" },
+        { "target": 7, "type": "hamkor" },
+        { "target": 8, "type": "tanish" }
       ]
     },
     {
       "id": 3,
-      "name": "Bekzod Salimov",
-      "occupation": "Marketing mutaxassisi",
+      "name": "Bekzod Ikramov",
+      "occupation": "Biznesmen",
       "location": "Namangan",
       "connections": [
         { "target": 1, "type": "kursdosh" },
         { "target": 2, "type": "sinfdosh" },
-        { "target": 6, "type": "bolalikdagi_do‘st" }
+        { "target": 6, "type": "bolalikdagi_do'st" },
+        { "target": 9, "type": "hamkor" },
+        { "target": 10, "type": "harbiy_xizmatdosh" }
       ]
     },
     {
       "id": 4,
       "name": "Dilshod Xudoyberdiyev",
       "occupation": "Jurnalist",
-      "location": "Farg‘ona",
+      "location": "Farg'ona",
       "connections": [
         { "target": 1, "type": "instagram" },
-        { "target": 5, "type": "hamkor" }
+        { "target": 5, "type": "hamkor" },
+        { "target": 7, "type": "kursdosh" },
+        { "target": 11, "type": "qoshni" },
+        { "target": 12, "type": "tanish" }
       ]
     },
     {
       "id": 5,
-      "name": "Malika Sobirova",
+      "name": "Shokirjon Abdullayev",
       "occupation": "Huquqshunos",
       "location": "Andijon",
       "connections": [
         { "target": 2, "type": "qoshni" },
         { "target": 4, "type": "hamkor" },
-        { "target": 6, "type": "tanish" }
+        { "target": 6, "type": "tanish" },
+        { "target": 8, "type": "kursdosh" },
+        { "target": 9, "type": "sinfdosh" }
       ]
     },
     {
       "id": 6,
-      "name": "Javlon Qodirov",
+      "name": "Zarif Qodirov",
       "occupation": "Fotograf",
       "location": "Buxoro",
       "connections": [
-        { "target": 3, "type": "bolalikdagi_do‘st" },
+        { "target": 3, "type": "bolalikdagi_do'st" },
         { "target": 5, "type": "tanish" },
-        { "target": 1, "type": "konferensiya" }
+        { "target": 1, "type": "harbiy_xizmatdosh" },
+        { "target": 10, "type": "hamkor" },
+        { "target": 11, "type": "instagram" }
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Durdona Mamatqulova",
+      "occupation": "O'qituvchi",
+      "location": "Qarshi",
+      "connections": [
+        { "target": 2, "type": "hamkor" },
+        { "target": 4, "type": "kursdosh" },
+        { "target": 8, "type": "qoshni" },
+        { "target": 9, "type": "tanish" },
+        { "target": 12, "type": "sinfdosh" }
+      ]
+    },
+    {
+      "id": 8,
+      "name": "Rustam Aliyev",
+      "occupation": "Muhandis",
+      "location": "Navoiy",
+      "connections": [
+        { "target": 2, "type": "tanish" },
+        { "target": 5, "type": "kursdosh" },
+        { "target": 7, "type": "qoshni" },
+        { "target": 10, "type": "hamkasb" },
+        { "target": 11, "type": "harbiy_xizmatdosh" }
+      ]
+    },
+    {
+      "id": 9,
+      "name": "Zarina Mahmudova",
+      "occupation": "Shifokor",
+      "location": "Jizzax",
+      "connections": [
+        { "target": 3, "type": "hamkor" },
+        { "target": 5, "type": "sinfdosh" },
+        { "target": 7, "type": "tanish" },
+        { "target": 11, "type": "hamkasb" },
+        { "target": 12, "type": "instagram" }
+      ]
+    },
+    {
+      "id": 10,
+      "name": "Akbar Toshmatov",
+      "occupation": "Arxitektor",
+      "location": "Termiz",
+      "connections": [
+        { "target": 3, "type": "harbiy_xizmatdosh" },
+        { "target": 6, "type": "hamkor" },
+        { "target": 8, "type": "hamkasb" },
+        { "target": 12, "type": "kursdosh" },
+        { "target": 1, "type": "tanish" }
+      ]
+    },
+    {
+      "id": 11,
+      "name": "Dilfuza Shokirova",
+      "occupation": "Tadbirkor",
+      "location": "Xiva",
+      "connections": [
+        { "target": 4, "type": "qoshni" },
+        { "target": 6, "type": "instagram" },
+        { "target": 8, "type": "harbiy_xizmatdosh" },
+        { "target": 9, "type": "hamkasb" },
+        { "target": 12, "type": "hamkor" }
+      ]
+    },
+    {
+      "id": 12,
+      "name": "Sardor Rahimov",
+      "occupation": "Tarjimon",
+      "location": "Urganch",
+      "connections": [
+        { "target": 4, "type": "tanish" },
+        { "target": 7, "type": "sinfdosh" },
+        { "target": 9, "type": "instagram" },
+        { "target": 10, "type": "kursdosh" },
+        { "target": 11, "type": "hamkor" }
       ]
     }
   ]
-  
+}
