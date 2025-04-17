@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useUsers } from "../context/UserContext.jsx";
 import { findConnectionPath } from "../utils/findConnectionPath";
-import { FaSearch } from "react-icons/fa";
+import { FaSearch, FaSpinner } from "react-icons/fa";
 
 
 const SearchComponent = () => {
@@ -15,6 +15,7 @@ const SearchComponent = () => {
   const handleSearch = () => {
     setError("");
     setIsLoading(true);
+    setResults(null);
 
     const fromUser = users.find(u => u.name.toLowerCase() === fromName.toLowerCase());
     const toUser = users.find(u => u.name.toLowerCase() === toName.toLowerCase());
@@ -26,9 +27,11 @@ const SearchComponent = () => {
       return;
     }
 
-    const paths = findConnectionPath(users, fromUser.id, toUser.id);
-    setResults(paths);
-    setIsLoading(false);
+    setTimeout(() => {
+      const paths = findConnectionPath(users, fromUser.id, toUser.id);
+      setResults(paths);
+      setIsLoading(false);
+    }, 3000);
   };
 
   return (
@@ -54,18 +57,18 @@ const SearchComponent = () => {
           className="bg-blue-500 text-white px-4 rounded hover:bg-blue-600 transition-colors"
           disabled={isLoading}
         >
-          {isLoading ? "Qidirilmoqda..." : (
-            <div className="flex items-center gap-2">
-              <FaSearch />
-              <span>Search</span>
-            </div>
-          )}
+          <div className="flex items-center gap-2">
+            <FaSearch />
+            <span>Search</span>
+          </div>
         </button>
       </div>
       {isLoading ? (
-        <div className="text-sm text-blue-600">Qidirilmoqda...</div>
+        <div className="text-sm text-white p-2 rounded shadow flex items-center justify-center">
+          <FaSpinner className="animate-spin mr-2" size={35} />
+        </div>
       ) : error ? (
-        <div className="text-sm text-red-600">{error}</div>
+        <div className="text-sm text-red-600 bg-white p-2 rounded shadow">{error}</div>
       ) : results && results.length > 0 ? (
         <div className="space-y-2">
           {results.map((path, index) => (
@@ -74,8 +77,9 @@ const SearchComponent = () => {
             </div>
           ))}
         </div>
+      ) : results && results.length === 0 ? (
+        <div className="text-sm text-yellow-600 bg-white p-2 rounded shadow">Bog'lanish yo'li topilmadi</div>
       ) : null}
-
     </div>
   );
 };
