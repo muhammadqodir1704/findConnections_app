@@ -1,7 +1,7 @@
 export function findConnectionPath(users, fromId, toId) {
   const allPaths = [];
   const visited = new Set();
-  
+
   function dfs(currentId, path) {
     if (currentId === toId) {
       allPaths.push([...path]);
@@ -9,15 +9,18 @@ export function findConnectionPath(users, fromId, toId) {
     }
 
     const currentUser = users.find(u => u.id === currentId);
+    
     if (!currentUser || !currentUser.connections) return;
 
     for (const conn of currentUser.connections) {
-      if (!visited.has(conn.target)) {
-        visited.add(conn.target);
-        path.push(conn.target);
-        dfs(conn.target, path);
+      const targetId = conn.target; // Connection obyektidan target ID ni olish
+      
+      if (!visited.has(targetId)) {
+        visited.add(targetId);
+        path.push(targetId);
+        dfs(targetId, path);
         path.pop();
-        visited.delete(conn.target);
+        visited.delete(targetId);
       }
     }
   }

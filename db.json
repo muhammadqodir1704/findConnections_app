@@ -73,87 +73,8 @@
       "connections": [
         { "target": 3, "type": "bolalikdagi_do'st" },
         { "target": 5, "type": "tanish" },
-        { "target": 1, "type": "harbiy_xizmatdosh" },
         { "target": 10, "type": "hamkor" },
         { "target": 11, "type": "instagram" }
-      ]
-    },
-    {
-      "id": 7,
-      "name": "Durdona Mamatqulova",
-      "occupation": "O'qituvchi",
-      "location": "Qarshi",
-      "connections": [
-        { "target": 2, "type": "hamkor" },
-        { "target": 4, "type": "kursdosh" },
-        { "target": 8, "type": "qoshni" },
-        { "target": 9, "type": "tanish" },
-        { "target": 12, "type": "sinfdosh" }
-      ]
-    },
-    {
-      "id": 8,
-      "name": "Rustam Aliyev",
-      "occupation": "Muhandis",
-      "location": "Navoiy",
-      "connections": [
-        { "target": 2, "type": "tanish" },
-        { "target": 5, "type": "kursdosh" },
-        { "target": 7, "type": "qoshni" },
-        { "target": 10, "type": "hamkasb" },
-        { "target": 11, "type": "harbiy_xizmatdosh" }
-      ]
-    },
-    {
-      "id": 9,
-      "name": "Zarina Mahmudova",
-      "occupation": "Shifokor",
-      "location": "Jizzax",
-      "connections": [
-        { "target": 3, "type": "hamkor" },
-        { "target": 5, "type": "sinfdosh" },
-        { "target": 7, "type": "tanish" },
-        { "target": 11, "type": "hamkasb" },
-        { "target": 12, "type": "instagram" }
-      ]
-    },
-    {
-      "id": 10,
-      "name": "Akbar Toshmatov",
-      "occupation": "Arxitektor",
-      "location": "Termiz",
-      "connections": [
-        { "target": 3, "type": "harbiy_xizmatdosh" },
-        { "target": 6, "type": "hamkor" },
-        { "target": 8, "type": "hamkasb" },
-        { "target": 12, "type": "kursdosh" },
-        { "target": 1, "type": "tanish" }
-      ]
-    },
-    {
-      "id": 11,
-      "name": "Dilfuza Shokirova",
-      "occupation": "Tadbirkor",
-      "location": "Xiva",
-      "connections": [
-        { "target": 4, "type": "qoshni" },
-        { "target": 6, "type": "instagram" },
-        { "target": 8, "type": "harbiy_xizmatdosh" },
-        { "target": 9, "type": "hamkasb" },
-        { "target": 12, "type": "hamkor" }
-      ]
-    },
-    {
-      "id": 12,
-      "name": "Sardor Rahimov",
-      "occupation": "Tarjimon",
-      "location": "Urganch",
-      "connections": [
-        { "target": 4, "type": "tanish" },
-        { "target": 7, "type": "sinfdosh" },
-        { "target": 9, "type": "instagram" },
-        { "target": 10, "type": "kursdosh" },
-        { "target": 11, "type": "hamkor" }
       ]
     }
   ]

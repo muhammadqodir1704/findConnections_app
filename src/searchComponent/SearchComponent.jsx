@@ -13,7 +13,7 @@ const SearchComponent = () => {
   const handleSearch = () => {
     setError("");
     setIsLoading(true);
-    
+
     const fromUser = users.find(u => u.name.toLowerCase() === fromName.toLowerCase());
     const toUser = users.find(u => u.name.toLowerCase() === toName.toLowerCase());
 
@@ -31,24 +31,24 @@ const SearchComponent = () => {
 
   return (
     <div className="p-4 border rounded-xl bg-white shadow">
-      <h3 className="text-lg font-semibold mb-2">🔍 Search Connection</h3>
+      <h3 className="text-lg font-semibold mb-2"> Search Connection</h3>
       <div className="flex gap-2 mb-2">
         <input
           type="text"
-          placeholder="Kimdan"
+          placeholder="1-shaxsni kiriting"
           value={fromName}
           onChange={e => setFromName(e.target.value)}
           className="border p-2 rounded w-full"
         />
         <input
           type="text"
-          placeholder="Kimga"
+          placeholder="2-shaxsni kiriting"
           value={toName}
           onChange={e => setToName(e.target.value)}
           className="border p-2 rounded w-full"
         />
-        <button 
-          onClick={handleSearch} 
+        <button
+          onClick={handleSearch}
           className="bg-blue-500 text-white px-4 rounded hover:bg-blue-600 transition-colors"
           disabled={isLoading}
         >
@@ -60,7 +60,7 @@ const SearchComponent = () => {
         <div className="text-sm text-blue-600">Qidirilmoqda...</div>
       ) : error ? (
         <div className="text-sm text-red-600">{error}</div>
-      ) : results ? (
+      ) : results && results.length > 0 ? (
         <div className="space-y-2">
           {results.map((path, index) => (
             <div key={index} className="text-sm text-green-700">
@@ -69,6 +69,7 @@ const SearchComponent = () => {
           ))}
         </div>
       ) : null}
+
     </div>
   );
 };
