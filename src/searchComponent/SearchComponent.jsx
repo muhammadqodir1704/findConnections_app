@@ -61,10 +61,7 @@ const SearchComponent = () => {
             </div>
           )}
         </button>
-
-
       </div>
-
       {isLoading ? (
         <div className="text-sm text-blue-600">Qidirilmoqda...</div>
       ) : error ? (

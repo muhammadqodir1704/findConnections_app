@@ -1,7 +1,7 @@
 import React from "react";
 import ForceGraph2D from "react-force-graph-2d";
 import { useUsers } from "../context/UserContext.jsx";
-import { findConnectionPath } from "../utils/findConnectionPath.js"; // to‘g‘ri manzil bo‘lishi kerak
+import { findConnectionPath } from "../utils/findConnectionPath.js";
 
 const Graphics = ({ fromId, toId }) => {
   const { users } = useUsers();
@@ -10,13 +10,11 @@ const Graphics = ({ fromId, toId }) => {
     return <div className="text-center p-4">Loading...</div>;
   }
 
-  // Node'lar
   const nodes = users.map(user => ({
     id: user.id,
     name: user.name,
   }));
 
-  // Link'lar
   const links = users.flatMap(user =>
     user.connections
       .filter(conn => users.some(u => u.id === conn.target))
@@ -29,11 +27,9 @@ const Graphics = ({ fromId, toId }) => {
 
   const graphData = { nodes, links };
 
-  // 🔍 Path topamiz
   const allPaths = fromId && toId ? findConnectionPath(users, fromId, toId) : [];
   const highlightPath = allPaths && allPaths.length > 0 ? allPaths[0] : [];
 
-  // 🔴 Path linklarini ajratamiz
   const highlightLinks = [];
   for (let i = 0; i < highlightPath.length - 1; i++) {
     highlightLinks.push({
