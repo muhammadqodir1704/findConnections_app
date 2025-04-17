@@ -56,8 +56,8 @@ const SearchComponent = () => {
         >
           {isLoading ? "Qidirilmoqda..." : (
             <div className="flex items-center gap-2">
-              <span>Search</span>
               <FaSearch />
+              <span>Search</span>
             </div>
           )}
         </button>
@@ -72,7 +72,7 @@ const SearchComponent = () => {
       ) : results && results.length > 0 ? (
         <div className="space-y-2">
           {results.map((path, index) => (
-            <div key={index} className="text-sm text-green-700">
+            <div key={index} className="text-sm text-gray-800 bg-white p-2 rounded shadow">
               Yo'l {index + 1}: {path.map(id => users.find(u => u.id === id)?.name).join(" → ")}
             </div>
           ))}

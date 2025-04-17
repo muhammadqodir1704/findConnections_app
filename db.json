@@ -74,7 +74,35 @@
         { "target": 3, "type": "bolalikdagi_do'st" },
         { "target": 5, "type": "tanish" },
         { "target": 10, "type": "hamkor" },
-        { "target": 11, "type": "instagram" }
+        { "target": 11, "type": "instagram" },
+        { "target": 12, "type": "kursdosh" }
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Durdona Mamatqulova",
+      "occupation": "O'qituvchi",
+      "location": "Qarshi",
+      "connections": [
+        { "target": 2, "type": "hamkor" },
+        { "target": 4, "type": "kursdosh" },
+        { "target": 8, "type": "sinfdosh" },
+        { "target": 12, "type": "qoshni" },
+        { "target": 13, "type": "tanish" }
+      ]
+    },
+    {
+      "id": 8,
+      "name": "Jasurbek Tashkentov",
+      "occupation": "Muhandis",
+      "location": "Toshkent",
+      "connections": [
+        { "target": 2, "type": "tanish" },
+        { "target": 5, "type": "kursdosh" },
+        { "target": 7, "type": "sinfdosh" },
+        { "target": 9, "type": "hamkor" },
+        { "target": 10, "type": "instagram" }
+
       ]
     }
   ]
