@@ -13,7 +13,7 @@ export function findConnectionPath(users, fromId, toId) {
     if (!currentUser || !currentUser.connections) return;
 
     for (const conn of currentUser.connections) {
-      const targetId = conn.target; // Connection obyektidan target ID ni olish
+      const targetId = conn.target; 
       
       if (!visited.has(targetId)) {
         visited.add(targetId);

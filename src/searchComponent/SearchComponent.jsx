@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { useUsers } from "../context/UserContext.jsx";
 import { findConnectionPath } from "../utils/findConnectionPath";
+import { FaSearch } from "react-icons/fa";
+
 
 const SearchComponent = () => {
   const { users } = useUsers();
@@ -30,7 +32,7 @@ const SearchComponent = () => {
   };
 
   return (
-    <div className="p-4 border rounded-xl bg-white shadow">
+    <div style={{ backgroundColor: "#6560af" }} className="p-4 rounded-lg shadow-md text-white">
       <h3 className="text-lg font-semibold mb-2"> Search Connection</h3>
       <div className="flex gap-2 mb-2">
         <input
@@ -38,22 +40,29 @@ const SearchComponent = () => {
           placeholder="1-shaxsni kiriting"
           value={fromName}
           onChange={e => setFromName(e.target.value)}
-          className="border p-2 rounded w-full"
+          className="border p-2 rounded w-full bg-white text-black"
         />
         <input
           type="text"
           placeholder="2-shaxsni kiriting"
           value={toName}
           onChange={e => setToName(e.target.value)}
-          className="border p-2 rounded w-full"
+          className="border p-2 rounded w-full bg-white text-black"
         />
         <button
           onClick={handleSearch}
           className="bg-blue-500 text-white px-4 rounded hover:bg-blue-600 transition-colors"
           disabled={isLoading}
         >
-          {isLoading ? "Qidirilmoqda..." : "Search"}
+          {isLoading ? "Qidirilmoqda..." : (
+            <div className="flex items-center gap-2">
+              <span>Search</span>
+              <FaSearch />
+            </div>
+          )}
         </button>
+
+
       </div>
 
       {isLoading ? (
