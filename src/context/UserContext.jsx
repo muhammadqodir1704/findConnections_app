@@ -2,7 +2,6 @@ import React, { createContext, useContext, useEffect, useState } from "react";
 import axios from "axios";
 
 const UserContext = createContext();
-
 export const useUsers = () => useContext(UserContext);
 
 export const UserProvider = ({ children }) => {
@@ -22,7 +21,6 @@ export const UserProvider = ({ children }) => {
         };
         fetchUsers();
     }, []);
-    
     return (
         <UserContext.Provider value={{ users, error }}>
             {children}
