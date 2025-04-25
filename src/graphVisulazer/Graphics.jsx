@@ -39,35 +39,36 @@ const Graphics = ({ fromId, toId }) => {
   }
 
   return (
-    <div className="h-[500px] border rounded-xl overflow-hidden bg-gray-50 shadow my-4">
-      <ForceGraph2D
-        graphData={graphData}
-        nodeLabel="name"
-        nodeAutoColorBy="id"
-        linkLabel="type"
-        linkDirectionalArrowLength={4}
-        linkDirectionalArrowRelPos={1}
-        linkColor={link =>
-          highlightLinks.some(
-            hl =>
-              (hl.source === link.source && hl.target === link.target) ||
-              (hl.source === link.target && hl.target === link.source)
-          )
-            ? "red"
-            : "#999"
-        }
-        nodeCanvasObject={(node, ctx, globalScale) => {
-          const label = node.name;
-          const fontSize = 12 / globalScale;
-          ctx.font = `${fontSize}px Sans-Serif`;
-          ctx.fillStyle = highlightPath.includes(node.id) ? "red" : "black";
-          ctx.beginPath();
-          ctx.arc(node.x, node.y, 5, 0, 2 * Math.PI, false);
-          ctx.fill();
-          ctx.fillText(label, node.x + 6, node.y + 3);
-        }}
-      />
-    </div>
+    <div className="h-[500px] border rounded-2xl overflow-hidden bg-white shadow-xl my-6 p-4 transition-all duration-300 hover:shadow-2xl">
+    <ForceGraph2D
+      graphData={graphData}
+      nodeLabel="name"
+      nodeAutoColorBy="id"
+      linkLabel="type"
+      linkDirectionalArrowLength={6}
+      linkDirectionalArrowRelPos={1}
+      linkColor={link =>
+        highlightLinks.some(
+          hl =>
+            (hl.source === link.source && hl.target === link.target) ||
+            (hl.source === link.target && hl.target === link.source)
+        )
+          ? "red"
+          : "#ccc"
+      }
+      nodeCanvasObject={(node, ctx, globalScale) => {
+        const label = node.name;
+        const fontSize = 14 / globalScale;
+        ctx.font = `bold ${fontSize}px Sans-Serif`;
+        ctx.fillStyle = highlightPath.includes(node.id) ? "#e11d48" : "#1f2937"; 
+        ctx.beginPath();
+        ctx.arc(node.x, node.y, 6, 0, 2 * Math.PI, false);
+        ctx.fill();
+        ctx.fillText(label, node.x + 8, node.y + 4);
+      }}
+    />
+  </div>
+  
   );
 };
 
