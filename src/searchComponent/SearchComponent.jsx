@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useUsers } from "../context/UserContext.jsx";
+import { useUsers } from "../context/userContext";
 import { findConnectionPath } from "../utils/findConnectionPath";
 import { FaSearch, FaSpinner } from "react-icons/fa";
 
@@ -12,6 +12,20 @@ const SearchComponent = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
 
+  const withoutSpaces = () => {
+    const trimmedFromName = fromName.trim();
+    const trimmedToName = toName.trim();
+    
+    setFromName(trimmedFromName);
+    setToName(trimmedToName);
+    
+    const filteredUsers = users.filter(user => 
+      user.name.toLowerCase().includes(trimmedFromName.toLowerCase()) ||
+      user.name.toLowerCase().includes(trimmedToName.toLowerCase())
+    );
+    
+    return filteredUsers;
+  };
   const handleSearch = () => {
     setError("");
     setIsLoading(true);
@@ -43,6 +57,7 @@ const SearchComponent = () => {
           placeholder="1-shaxsni kiriting"
           value={fromName}
           onChange={e => setFromName(e.target.value)}
+          onBlur={withoutSpaces}
           className="border p-2 rounded w-full bg-white text-black"
         />
         <input
@@ -50,6 +65,7 @@ const SearchComponent = () => {
           placeholder="2-shaxsni kiriting"
           value={toName}
           onChange={e => setToName(e.target.value)}
+          onBlur={withoutSpaces}
           className="border p-2 rounded w-full bg-white text-black"
         />
         <button
