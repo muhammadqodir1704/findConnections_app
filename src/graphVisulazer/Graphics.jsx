@@ -17,11 +17,11 @@ const Graphics = ({ fromId, toId }) => {
 
   const links = users.flatMap(user =>
     user.connections
-      .filter(conn => users.some(u => u.id === conn.target))
-      .map(conn => ({
+      .filter(connect => users.some(u => u.id === connect.target))
+      .map(connect => ({
         source: user.id,
-        target: conn.target,
-        type: conn.type,
+        target: connect.target,
+        type: connect.type,
       }))
   );
 

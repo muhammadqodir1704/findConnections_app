@@ -2,7 +2,7 @@
   "users": [
     {
       "id": 1,
-      "name": "Alisher Karimov",
+      "name": "Alisher",
       "occupation": "Dasturchi",
       "location": "Toshkent",
       "connections": [
@@ -15,7 +15,7 @@
     },
     {
       "id": 2,
-      "name": "Gulnoza Murodova",
+      "name": "Gulnoza",
       "occupation": "Dizayner",
       "location": "Samarqand",
       "connections": [
@@ -28,7 +28,7 @@
     },
     {
       "id": 3,
-      "name": "Bekzod Ikramov",
+      "name": "Bekzod",
       "occupation": "Biznesmen",
       "location": "Namangan",
       "connections": [
@@ -41,7 +41,7 @@
     },
     {
       "id": 4,
-      "name": "Dilshod Xudoyberdiyev",
+      "name": "Dilshod",
       "occupation": "Jurnalist",
       "location": "Farg'ona",
       "connections": [
@@ -54,7 +54,7 @@
     },
     {
       "id": 5,
-      "name": "Shokirjon Abdullayev",
+      "name": "Shokirjon",
       "occupation": "Huquqshunos",
       "location": "Andijon",
       "connections": [
@@ -67,7 +67,7 @@
     },
     {
       "id": 6,
-      "name": "Zarif Qodirov",
+      "name": "Zarif",
       "occupation": "Fotograf",
       "location": "Buxoro",
       "connections": [
@@ -80,7 +80,7 @@
     },
     {
       "id": 7,
-      "name": "Durdona Mamatqulova",
+      "name": "Durdona",
       "occupation": "O'qituvchi",
       "location": "Qarshi",
       "connections": [
@@ -93,7 +93,7 @@
     },
     {
       "id": 8,
-      "name": "Jasurbek Tashkentov",
+      "name": "Jasurbek",
       "occupation": "Muhandis",
       "location": "Toshkent",
       "connections": [
