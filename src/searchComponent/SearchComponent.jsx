@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useUsers } from "../context/userContext.jsx";
+import { useUsers } from "../context/UserContext.jsx";
 import { findConnectionPath } from "../utils/findConnectionPath";
 import { FaSearch, FaSpinner } from "react-icons/fa";
 
