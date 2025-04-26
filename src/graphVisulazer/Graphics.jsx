@@ -37,7 +37,6 @@ const Graphics = ({ fromId, toId }) => {
       target: highlightPath[i + 1],
     });
   }
-
   return (
     <div className="h-[500px] border rounded-2xl overflow-hidden bg-white shadow-xl my-6 p-4 transition-all duration-300 hover:shadow-2xl">
     <ForceGraph2D
