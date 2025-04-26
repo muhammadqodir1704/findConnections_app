@@ -1,6 +1,6 @@
 import React from "react";
 import ForceGraph2D from "react-force-graph-2d";
-import { useUsers } from "../context/userContext.jsx";
+import { useUsers } from "../context/UserContext.jsx";
 import { findConnectionPath } from "../utils/findConnectionPath.js";
 
 const Graphics = ({ fromId, toId }) => {
