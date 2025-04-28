@@ -11,7 +11,7 @@ export const UserProvider = ({ children }) => {
     useEffect(() => {
         const fetchUsers = async () => {
             try {
-                const response = await axios.get("http://localhost:3001/users");
+                const response = await axios.get("http://localhost:3001/");
                 setUsers(Array.isArray(response.data) ? response.data : []);
             } catch (err) {
                 setError(err.message);
