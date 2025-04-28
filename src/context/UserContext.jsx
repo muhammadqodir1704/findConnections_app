@@ -11,14 +11,15 @@ export const UserProvider = ({ children }) => {
     useEffect(() => {
         const fetchUsers = async () => {
             try {
-                const response = await axios.get("http://localhost:3001/");
-                setUsers(Array.isArray(response.data) ? response.data : []);
+              const response = await axios.get("http://localhost:5000/api/people");
+              setUsers(Array.isArray(response.data) ? response.data : []);
             } catch (err) {
-                setError(err.message);
-                console.error("Error fetching users:", err);
-                setUsers([]);
+              setError(err.message);
+              console.error("Error fetching users:", err);
+              setUsers([]);
             }
-        };
+          };
+          
         fetchUsers();
     }, []);
     return (
