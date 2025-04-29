@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import { useUsers } from "../context/UserContext.jsx";
 import { findConnectionPath } from "../utils/findConnectionPath";
-import { FaSearch, FaSpinner } from "react-icons/fa";
-
-
+import { FaSearch, FaSpinner } from "react-icons/fa";       
+                                  
 const SearchComponent = () => {
   const { users } = useUsers();
   const [fromName, setFromName] = useState("");
@@ -11,7 +10,6 @@ const SearchComponent = () => {
   const [results, setResults] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
-
   const withoutSpaces = () => {
     const trimmedFromName = fromName.trim();
     const trimmedToName = toName.trim();
