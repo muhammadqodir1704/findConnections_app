@@ -5,6 +5,7 @@ import { findConnectionPath } from "../utils/findConnectionPath.js";
 
 const Graphics = ({ fromId, toId }) => {
   const { users } = useUsers();
+  console.log(users);
 
   if (!users || users.length === 0) {
     return <div className="text-center p-4">Loading...</div>;
