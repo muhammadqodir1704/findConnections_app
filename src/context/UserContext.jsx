@@ -12,7 +12,7 @@ export const UserProvider = ({ children }) => {
     useEffect(() => {
         const fetchUsers = async () => {
             try {
-              const response = await axios.get(`${API_URL}/api/people`);
+              const response = await axios.get(`${API_URL}/api/users`);
               setUsers(Array.isArray(response.data) ? response.data : []);
             } catch (err) {
               setError(err.message);
