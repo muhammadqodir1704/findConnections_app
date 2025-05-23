@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { UserProvider } from "./context/UserContext.jsx";
 import Graphics from "./graphVisulazer/Graphics";
 import SearchComponent from "./searchComponent/SearchComponent";
@@ -10,7 +10,6 @@ const App = () => {
         <SearchComponent />
         <Graphics />
       </div>
-      <h1>{message}</h1>
     </UserProvider>
   );
 };
