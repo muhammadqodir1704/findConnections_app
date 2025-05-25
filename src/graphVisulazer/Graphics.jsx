@@ -56,7 +56,7 @@ const Graphics = ({ fromId, toId }) => {
         nodeLabel="name"
         nodeAutoColorBy="id"
         linkLabel="type"
-        linkDirectionalArrowLength={6}
+        linkDirectionalArrowLength={7}
         linkDirectionalArrowRelPos={1}
         linkColor={(link) =>
           highlightLinks.some(
